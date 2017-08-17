@@ -1,3 +1,5 @@
+import random
+
 class RandomArray:
     """ An utility that allows you to create an array of random integers with arbitrary length"""
     
@@ -7,7 +9,7 @@ class RandomArray:
     def init(self):
         i = 0
         while i < self.length:
-            self.numbers.append(i)
+            self.numbers.append(random.randint(0,9))
             i+=1
 
     def __init__(self, length):
