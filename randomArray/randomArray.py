@@ -20,7 +20,4 @@ class RandomArray:
         for i in range(len(self.numbers)):
             print(self.numbers[i])
 
-x = RandomArray(10)
-print(x.__doc__)
-x.printNumbers()
 
