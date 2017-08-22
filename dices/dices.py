@@ -1,8 +1,13 @@
 import random
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("rows",help = "Number of total dice rows to do for the simulation", type=int)
+args = parser.parse_args()
 
 counter = 0
-finalResult = [[0],[0],[0],[0],[0],[0],[0],[0],[0]]
-throws = 50000
+finalResult = [[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0],[0]]
+throws = args.rows
 
 def rollDice():
     return random.randint(1,6)
