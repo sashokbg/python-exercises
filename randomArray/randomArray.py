@@ -18,6 +18,7 @@ class RandomArray:
 
     def printNumbers(self):
         for i in range(len(self.numbers)):
-            print(self.numbers[i])
+            print("{} ".format(self.numbers[i]), end='')
+        print()
 
 
