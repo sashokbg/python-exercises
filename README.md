@@ -1,3 +1,7 @@
 # python-exercises
 
-Set PYTHONPATH to ~/projects/pythonExercises/
+Set PYTHONPATH in order to use module imports:
+
+export PYTHONPATH ~/projects/pythonExercises/
+
+
