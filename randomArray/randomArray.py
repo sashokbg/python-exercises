@@ -21,4 +21,6 @@ class RandomArray:
             print("{} ".format(self.numbers[i]), end='')
         print()
 
+    def __iter__(self):
+        return self.numbers.__iter__()
 
