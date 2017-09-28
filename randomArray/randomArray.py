@@ -23,4 +23,6 @@ class RandomArray:
 
     def __iter__(self):
         return self.numbers.__iter__()
-
+    
+    def __getitem__(self, key):
+        return self.numbers.__getitem__(key)
