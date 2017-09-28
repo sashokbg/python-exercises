@@ -26,3 +26,9 @@ class RandomArray:
     
     def __getitem__(self, key):
         return self.numbers.__getitem__(key)
+
+    def __len__(self):
+        return self.numbers.__len__()
+
+    def __setitem__(self, key, value):
+        return self.numbers.__setitem__(key, value)
