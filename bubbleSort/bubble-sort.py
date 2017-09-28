@@ -5,10 +5,8 @@ def swap(numbers, pos1, pos2):
     numbers[pos1] = numbers[pos2]
     numbers[pos2] = tmp
 
-randomArray = RandomArray(5)
-randomArray.printNumbers()
-
-numbers = randomArray.numbers
+numbers = RandomArray(5)
+numbers.printNumbers()
 
 print("Starting sorting..")
 
