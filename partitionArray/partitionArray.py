@@ -7,6 +7,7 @@ high = len(arr)-1
 done = False
 
 def swap(i, j, arr):
+    print('swapping {} and {}'.format(i,j))
     tmp = arr[i]
     arr[i] = arr[j]
     arr[j] = tmp
@@ -24,10 +25,8 @@ while not done:
         high-=1
         print('high {}'.format(high))
 
-    swap(low-1, high, arr)
-    low+=1
-    high-=1
+    swap(low, high, arr)
 
-swap(0, low, arr)
+swap(0, high-1, arr)
 
 print(arr)
