@@ -7,8 +7,10 @@ def init():
 
 def printArray(arr, low, high):
     for i in range(len(arr)):
-        if(i == low or i == high):
-            print('v ', end='')
+        if  (i == low):
+            print('L ', end='')
+        elif(i == high):
+            print('H ', end='')
         else:
             print('  ', end='')
     print()
