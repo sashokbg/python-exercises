@@ -24,6 +24,7 @@ def chosePivot(arr):
     pivotPosition = len(arr)//2;
     print('Pivot value is {} at position {}'.format(arr[pivotPosition], pivotPosition))
     swap(0, pivotPosition, arr)
+    return pivotPosition
 
 def partition(arr):
     chosePivot(arr)
