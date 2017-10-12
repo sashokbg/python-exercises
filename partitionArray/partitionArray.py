@@ -2,7 +2,7 @@ from randomArray.randomArray import RandomArray
 
 def init():
     arr = RandomArray(10)
-    arr.printNumbers()
+    print(arr)
     return arr
 
 def printArray(arr, low, high):
@@ -12,7 +12,7 @@ def printArray(arr, low, high):
         else:
             print('  ', end='')
     print()
-    arr.printNumbers()
+    print(arr)
 
 def swap(i, j, arr):
     print('swapping {}[{}] and {}[{}]'.format(i,arr[i],j,arr[j]))
@@ -58,7 +58,7 @@ def partition(arr):
     print('Partitioning done, inserting pivot at position')
     swap(0, low, arr)
 
-    arr.printNumbers()
+    print(arr)
 
 if __name__ == '__main__':
     arr = init()
