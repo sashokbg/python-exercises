@@ -1,32 +1,65 @@
-arr = [5,4,8,9,6,3,7]
+from randomArray.randomArray import RandomArray
 
-low = 1
-high = len(arr)-1
+def init():
+    arr = RandomArray(10)
+    arr.printNumbers()
+    return arr
 
-
-done = False
+def printArray(arr, low, high):
+    for i in range(len(arr)):
+        if(i == low or i == high):
+            print('v ', end='')
+        else:
+            print('  ', end='')
+    print()
+    arr.printNumbers()
 
 def swap(i, j, arr):
-    print('swapping {} and {}'.format(i,j))
+    print('swapping {}[{}] and {}[{}]'.format(i,arr[i],j,arr[j]))
     tmp = arr[i]
     arr[i] = arr[j]
     arr[j] = tmp
 
-while not done:
+def chosePivot(arr):
+    pivotPosition = len(arr)//2;
+    print('Pivot value is {} at position {}'.format(arr[pivotPosition], pivotPosition))
+    swap(0, pivotPosition, arr)
 
-    if(low >= high):
-        done = True
+def partition(arr):
+    chosePivot(arr)
 
-    while(arr[low] < arr[0] and low<high):
+    low = 1
+    high = len(arr)-1
+
+    printArray(arr, low, high)
+
+    done = False
+
+    while not done:
+
+        while(arr[low] < arr[0] and low<high):
+            low+=1
+            printArray(arr, low, high)
+
+        while(arr[high] > arr[0] and low<high):
+            high-=1
+            printArray(arr, low, high)
+
+        if(low >= high):
+            done = True
+            break
+
+        swap(low, high, arr)
         low+=1
-        print('low {}'.format(low))
-
-    while(arr[high] > arr[0] and low<high):
         high-=1
-        print('high {}'.format(high))
 
-    swap(low, high, arr)
+        printArray(arr, low, high)
 
-swap(0, high-1, arr)
+    print('Partitioning done, inserting pivot at position')
+    swap(0, low, arr)
 
-print(arr)
+    arr.printNumbers()
+
+if __name__ == '__main__':
+    arr = init()
+    partition(arr)
