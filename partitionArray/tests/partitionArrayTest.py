@@ -16,14 +16,14 @@ class PartitionArrayTest(unittest.TestCase):
     def test_should_define_pivot_in_middle_when_5_numbers(self):
         arr = RandomArray(5)
         arr.numbers = [0, 1, 2, 3, 4]
-        pivotPosition = chosePivot(arr)
+        pivotPosition, pivotValue = chosePivot(arr)
 
         self.assertEqual(pivotPosition, 2)
 
     def test_should_define_pivot_in_1_when_4_numbers(self):
         arr = RandomArray(4)
         arr.numbers = [0, 1, 2, 4]
-        pivotPosition = chosePivot(arr)
+        pivotPosition, pivotValue = chosePivot(arr)
 
         self.assertEqual(pivotPosition,2)
 
@@ -65,7 +65,7 @@ class PartitionArrayTest(unittest.TestCase):
         arr.numbers = [9, 0, 9, 5, 9]
         partition(arr)
 
-        self.assertEqual(arr.numbers, [0, 9, 9, 9, 5])
+        self.assertEqual(arr.numbers, [0, 5, 9, 9, 9])
 
 if __name__ == '__main__':
     unittest.main()

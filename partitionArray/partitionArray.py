@@ -25,50 +25,30 @@ def swap(i, j, arr):
 def chosePivot(arr):
     pivotPosition = len(arr)//2;
     print('Pivot value is {} at position {}'.format(arr[pivotPosition], pivotPosition))
-    swap(0, pivotPosition, arr)
-    return pivotPosition
+    return pivotPosition, arr[pivotPosition]
 
 def partition(arr):
-    if(len(arr) == 1):
-        return arr
+    pivotPosition, pivotValue = chosePivot(arr)
 
-    chosePivot(arr)
-
-    low = 1
+    low = 0
     high = len(arr)-1
-
+    i = 0
     printArray(arr, low, high)
 
-    done = False
-
-    while not done:
-
-        while(arr[low] < arr[0] and low<high):
+    while i <= high:
+        if(arr[i] < pivotValue):
+            swap(i, low, arr)
+            i+=1
             low+=1
-            printArray(arr, low, high)
-
-        while(arr[high] > arr[0] and low<high):
+        elif(arr[i] > pivotValue):
+            swap(i, high, arr)
             high-=1
-            printArray(arr, low, high)
-
-
-        swap(low, high, arr)
-
-        if(low >= high-1):
-            done = True
-            break
-
-        low+=1
-        high-=1
+        else:
+            i+=1
 
         printArray(arr, low, high)
 
     print('Partitioning done, inserting pivot at position')
-    if(low == high and low < len(arr)-1):
-            swap(0, low-1, arr)
-    else:
-        swap(0, low, arr)
-
     print(arr)
 
 if __name__ == '__main__':
