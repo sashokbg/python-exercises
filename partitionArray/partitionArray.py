@@ -29,6 +29,9 @@ def chosePivot(arr):
     return pivotPosition
 
 def partition(arr):
+    if(len(arr) == 1):
+        return arr
+
     chosePivot(arr)
 
     low = 1
@@ -61,7 +64,10 @@ def partition(arr):
         printArray(arr, low, high)
 
     print('Partitioning done, inserting pivot at position')
-    swap(0, low, arr)
+    if(low == high and low < len(arr)-1):
+            swap(0, low-1, arr)
+    else:
+        swap(0, low, arr)
 
     print(arr)
 
