@@ -32,3 +32,9 @@ class RandomArray:
 
     def __setitem__(self, key, value):
         return self.numbers.__setitem__(key, value)
+
+    def __str__(self):
+        asString = ''
+        for i in range(len(self.numbers)):
+             asString+=str(self.numbers[i])+' '
+        return asString
