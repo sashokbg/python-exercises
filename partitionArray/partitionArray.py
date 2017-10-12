@@ -48,11 +48,13 @@ def partition(arr):
             high-=1
             printArray(arr, low, high)
 
-        if(low >= high):
+
+        swap(low, high, arr)
+
+        if(low >= high-1):
             done = True
             break
 
-        swap(low, high, arr)
         low+=1
         high-=1
 
