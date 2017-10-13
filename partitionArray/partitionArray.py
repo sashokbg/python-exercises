@@ -17,23 +17,20 @@ def printArray(arr, low, high):
     print(arr)
 
 def swap(i, j, arr):
-    print('swapping {}[{}] and {}[{}]'.format(i,arr[i],j,arr[j]))
     tmp = arr[i]
     arr[i] = arr[j]
     arr[j] = tmp
 
-def chosePivot(arr):
-    pivotPosition = len(arr)//2;
-    print('Pivot value is {} at position {}'.format(arr[pivotPosition], pivotPosition))
+def chosePivot(arr, start, end):
+    pivotPosition = (abs(start-end)//2)+start;
     return pivotPosition, arr[pivotPosition]
 
-def partition(arr):
-    pivotPosition, pivotValue = chosePivot(arr)
+def partition(arr, start, end):
+    pivotPosition, pivotValue = chosePivot(arr, start, end)
 
-    low = 0
-    high = len(arr)-1
-    i = 0
-    printArray(arr, low, high)
+    low = start
+    high = end
+    i = start
 
     while i <= high:
         if(arr[i] < pivotValue):
@@ -46,10 +43,7 @@ def partition(arr):
         else:
             i+=1
 
-        printArray(arr, low, high)
-
-    print('Partitioning done, inserting pivot at position')
-    print(arr)
+    return low
 
 if __name__ == '__main__':
     arr = init()
