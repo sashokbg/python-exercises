@@ -1,14 +1,18 @@
 from randomArray.randomArray import RandomArray 
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("numberOfElements", type=int, help="The number of random elements to generate")
+
+args= parser.parse_args()
 
 def swap(numbers, pos1, pos2):
     tmp = numbers[pos1]
     numbers[pos1] = numbers[pos2]
     numbers[pos2] = tmp
 
-numbers = RandomArray(5)
-numbers.printNumbers()
-
-print("Starting sorting..")
+numbers = RandomArray(args.numberOfElements)
+print(numbers)
 
 isDone  = False
 while not isDone:
@@ -19,17 +23,9 @@ while not isDone:
         num2 = numbers[i+1]
     
         if(num1>num2):
-            print('Swapping numbers {} {}'.format(num1, num2))
             isDone  = False
             swap(numbers, i, i+1)
 
-        print('Is done - {}'.format(isDone))
         i = i+1
-    print('Ended iteration. Is done {}'.format(isDone))
 
-for i in range(len(numbers)):
-    print(numbers[i])
-
-#randomArray.numbers = numbers
-#randomArray.printNumbers()
-
+print(numbers)
