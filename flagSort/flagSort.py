@@ -1,3 +1,5 @@
+from python_tools.swap import *
+
 arr = [1, 0, 2, 1, 2, 1, 0, 0, 1]
 
 print(arr)
@@ -13,12 +15,6 @@ def printArray(arr, low, high):
             print('   ', end='')
     print()
     print(arr)
-
-def swap(this, that, arr):
-    print('Swapping positions {} and {}'.format(this, that))
-    tmp = arr[this]
-    arr[this] = arr[that]
-    arr[that] = tmp
 
 def sortFlag(arr):
     low = 0
