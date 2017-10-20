@@ -2,6 +2,6 @@
 
 Set PYTHONPATH in order to use module imports:
 
-export PYTHONPATH ~/projects/pythonExercises/
+export PYTHONPATH=~/projects/pythonExercises/
 
 
