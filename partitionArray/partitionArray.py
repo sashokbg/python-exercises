@@ -1,4 +1,5 @@
 from randomArray.randomArray import RandomArray
+from tools.swap import swap
 
 def init():
     arr = RandomArray(10)
@@ -15,11 +16,6 @@ def printArray(arr, low, high):
             print('  ', end='')
     print()
     print(arr)
-
-def swap(i, j, arr):
-    tmp = arr[i]
-    arr[i] = arr[j]
-    arr[j] = tmp
 
 def chosePivot(arr, start, end):
     pivotPosition = (abs(start-end)//2)+start;
@@ -47,4 +43,4 @@ def partition(arr, start, end):
 
 if __name__ == '__main__':
     arr = init()
-    partition(arr)
+    partition(arr,0,len(arr)-1)

@@ -1,15 +1,11 @@
 from randomArray.randomArray import RandomArray 
+from tools.swap import swap
 import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("numberOfElements", type=int, help="The number of random elements to generate")
 
 args= parser.parse_args()
-
-def swap(numbers, pos1, pos2):
-    tmp = numbers[pos1]
-    numbers[pos1] = numbers[pos2]
-    numbers[pos2] = tmp
 
 numbers = RandomArray(args.numberOfElements)
 print(numbers)
@@ -24,7 +20,7 @@ while not isDone:
     
         if(num1>num2):
             isDone  = False
-            swap(numbers, i, i+1)
+            swap(i, i+1, numbers)
 
         i = i+1
 

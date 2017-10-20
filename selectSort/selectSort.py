@@ -1,4 +1,5 @@
 from randomArray.randomArray import RandomArray
+from tools.swap import swap
 
 randArr = RandomArray(10)
 randArr.printNumbers()
@@ -6,11 +7,6 @@ randArr.printNumbers()
 sortedIndex = 0
 min = randArr[sortedIndex]
 minIndex = sortedIndex
-
-def swap(randArr,index1,index2):
-    tmp = randArr[index1]
-    randArr[index1] = randArr[index2]
-    randArr[index2] = tmp
 
 def findMinIn(randArr,fromIndex):
     min = randArr[fromIndex]
@@ -24,7 +20,7 @@ def findMinIn(randArr,fromIndex):
 while sortedIndex < len(randArr)-1 :
     minIndex = findMinIn(randArr,sortedIndex)
 
-    swap(randArr,minIndex,sortedIndex)
+    swap(minIndex,sortedIndex,randArr)
     sortedIndex+=1
 
 print("Sorted:")
