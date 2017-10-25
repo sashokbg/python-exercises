@@ -30,7 +30,7 @@ vector1 = Vector([3, 2])
 
 print_vector(vector1, 'red')
 
-vector2 = Vector([1, 4])
+vector2 = Vector([1,-4])
 
 print_vector(vector2, 'blue')
 

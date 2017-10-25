@@ -1,8 +1,18 @@
 class Vector():
     elements = []
+    color = "black"
+    is_primary = False
 
-    def __init__(self, elements):
+    def __init__(self, elements, color="black", is_primary = False):
         self.elements = elements
+        self.color = color
+        self.is_primary = is_primary
+
+    def __getitem__(self, key):
+        return self.elements.__getitem__(key)
+
+    def __setitem__(self, key, value):
+        self.elements.__setitem__(key, value)
 
     def add(self, number):
         for i in range(len(self.elements)):
