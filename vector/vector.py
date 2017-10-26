@@ -23,3 +23,6 @@ class Vector():
             self.elements[i]+= vector.elements[i]
 
         return self
+
+    def __str__(self):
+        return str(self.elements)
