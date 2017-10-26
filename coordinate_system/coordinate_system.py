@@ -6,8 +6,8 @@ class CoordinateSystem():
     vectors = []
 
     def __init__(self, x, y):
-        xVector = Vector([0, -x], is_primary=True)
-        yVector = Vector([-y, 0], is_primary=True)
+        xVector = Vector([0, x], is_primary=True)
+        yVector = Vector([y, 0], is_primary=True)
 
         self.add_vector(xVector)
         self.add_vector(yVector)
@@ -17,17 +17,28 @@ class CoordinateSystem():
         self.vectors.append(vector)
 
     def print_primary_vector(self, vector):
+        print("Printing primary vector {}".format(vector))
         turtle.home()
+        turtle.pendown()
         for i in range(abs(vector.elements[0])):
             turtle.dot(3)
-            turtle.write(i, align='right')
-            turtle.setx(self.scale*(i+1))
+            if vector.elements[0]<0:
+                turtle.write(-i, align='right')
+                turtle.setx(-self.scale*(i+1))
+            else:
+                turtle.write(i, align='right')
+                turtle.setx(self.scale*(i+1))
+            
         turtle.home()
 
         for i in range(abs(vector.elements[1])):
-            turtle.dot(3)
-            turtle.write(i, align='right')
-            turtle.sety(self.scale*(i+1))
+            if vector.elements[1]<0:
+                turtle.write(-i, align='right')
+                turtle.sety(-self.scale*(i+1))
+            
+            else:
+                turtle.write(i, align='right')
+                turtle.sety(self.scale*(i+1))
         turtle.home()
         
     def print_system(self):
