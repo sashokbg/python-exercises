@@ -1,3 +1,5 @@
+import math
+
 class Vector():
     elements = []
     color = "black"
@@ -23,6 +25,14 @@ class Vector():
             self.elements[i]+= vector.elements[i]
 
         return self
+
+    def magnitude(self):
+        squared_sum = 0
+        for element in self.elements:
+            squared_sum += element**2
+
+        return math.sqrt(squared_sum)
+
 
     def __str__(self):
         return str(self.elements)

@@ -20,3 +20,13 @@ class TestVector(unittest.TestCase):
         vector2 = Vector([5, -4, 4])
 
         self.assertEqual(vector1.add_vector(vector2).elements, [2, -2, 9])
+
+    def test_2Dvector_length(self):
+        vector1 = Vector([5,2])
+
+        self.assertEqual(vector1.magnitude(), 5.385164807134504)
+
+    def test_3Dvector_length(self):
+        vector = Vector([3, 2, 5])
+
+        self.assertEqual(vector.magnitude(), 6.164414002968976) 
