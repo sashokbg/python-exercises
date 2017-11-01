@@ -32,6 +32,7 @@ class CoordinateSystem():
         turtle.home()
 
         for i in range(abs(vector.elements[1])):
+            turtle.dot(3)
             if vector.elements[1]<0:
                 turtle.write(-i, align='right')
                 turtle.sety(-self.scale*(i+1))
@@ -55,6 +56,7 @@ class CoordinateSystem():
                 turtle.home()              
                 turtle.pendown()           
                 turtle.goto(vector.elements[0]*self.scale,vector.elements[1]*self.scale)
+                turtle.write('[{0:.2f}]'.format(vector.magnitude()))
                 turtle.penup()
                 turtle.home()
 
