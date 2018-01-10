@@ -1,8 +1,12 @@
 import turtle
 from coordinate_system import CoordinateSystem
 from vector.vector import Vector
+from turtle_drawer import TurtleDrawer
 
-system = CoordinateSystem(10, 10)
+drawer = TurtleDrawer()
+
+system = CoordinateSystem(10, 10, drawer)
+
 v1 = Vector([2,3], color="green")
 v2 = Vector([6,-3], color="blue")
 #v3 = v1.subvector(1)
